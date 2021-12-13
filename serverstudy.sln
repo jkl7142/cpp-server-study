@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SocketLibrary", "SocketLibrary\SocketLibrary.vcxproj", "{39A93808-F679-4BF5-B30D-13A0790B32CD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Thread", "Thread\Thread.vcxproj", "{3CD5E18E-6B3C-4058-80FF-59A9572CD109}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{39A93808-F679-4BF5-B30D-13A0790B32CD}.Release|x64.Build.0 = Release|x64
 		{39A93808-F679-4BF5-B30D-13A0790B32CD}.Release|x86.ActiveCfg = Release|Win32
 		{39A93808-F679-4BF5-B30D-13A0790B32CD}.Release|x86.Build.0 = Release|Win32
+		{3CD5E18E-6B3C-4058-80FF-59A9572CD109}.Debug|x64.ActiveCfg = Debug|x64
+		{3CD5E18E-6B3C-4058-80FF-59A9572CD109}.Debug|x64.Build.0 = Debug|x64
+		{3CD5E18E-6B3C-4058-80FF-59A9572CD109}.Debug|x86.ActiveCfg = Debug|Win32
+		{3CD5E18E-6B3C-4058-80FF-59A9572CD109}.Debug|x86.Build.0 = Debug|Win32
+		{3CD5E18E-6B3C-4058-80FF-59A9572CD109}.Release|x64.ActiveCfg = Release|x64
+		{3CD5E18E-6B3C-4058-80FF-59A9572CD109}.Release|x64.Build.0 = Release|x64
+		{3CD5E18E-6B3C-4058-80FF-59A9572CD109}.Release|x86.ActiveCfg = Release|Win32
+		{3CD5E18E-6B3C-4058-80FF-59A9572CD109}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
