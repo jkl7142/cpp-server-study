@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Endpoint.cpp" />
     <ClCompile Include="Socket.cpp" />
     <ClCompile Include="SocketInit.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -147,6 +148,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Endpoint.h" />
     <ClInclude Include="Socket.h" />
     <ClInclude Include="SocketInit.h" />
     <ClInclude Include="SocketLibrary.h" />
