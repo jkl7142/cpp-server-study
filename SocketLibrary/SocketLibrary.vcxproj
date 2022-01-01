@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Endpoint.cpp" />
+    <ClCompile Include="Exception.cpp" />
     <ClCompile Include="Socket.cpp" />
     <ClCompile Include="SocketInit.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -149,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Endpoint.h" />
+    <ClInclude Include="Exception.h" />
     <ClInclude Include="Socket.h" />
     <ClInclude Include="SocketInit.h" />
     <ClInclude Include="SocketLibrary.h" />
