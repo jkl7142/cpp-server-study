@@ -151,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="Endpoint.h" />
     <ClInclude Include="Exception.h" />
+    <ClInclude Include="Semaphore.h" />
     <ClInclude Include="Socket.h" />
     <ClInclude Include="SocketInit.h" />
     <ClInclude Include="SocketLibrary.h" />
