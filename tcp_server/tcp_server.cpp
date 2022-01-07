@@ -4,7 +4,7 @@
 // Defines the entry point for the console application.
 
 #include "stdafx.h"
-#include "../SocketLibrary/SocketLibrary.h"
+#include "../SocketLib/SocketLib.h"
 
 using namespace std;
 
