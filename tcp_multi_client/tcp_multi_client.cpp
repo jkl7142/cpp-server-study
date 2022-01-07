@@ -9,7 +9,7 @@
 #include <memory>
 #include <iostream>
 
-#include "../SocketLibrary/SocketLibrary.h"
+#include "../SocketLib/SocketLib.h"
 
 using namespace std;
 
