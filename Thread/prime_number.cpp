@@ -37,7 +37,7 @@ int main() {
 
 	auto t0 = chrono::system_clock::now();
 
-	// 1. ½Ì±Û½º·¹µå
+	// 1. ì‹±ê¸€ìŠ¤ë ˆë“œ
 	/*
 	for (int i = 1; i <= MaxCount; i++) {
 		if (IsPrimeNumber(i)) {
@@ -46,13 +46,13 @@ int main() {
 	}
 	*/
 
-	// 2. ¸ÖÆ¼½º·¹µå ±âº»°³³ä
+	// 2. ë©€í‹°ìŠ¤ë ˆë“œ ê¸°ë³¸ê°œë…
 	/*
 	vector<shared_ptr<thread>> threads;
 
 	for (int i = 0; i < ThreadCount; i++) {
 		shared_ptr<thread> thread1(new thread([&]() {
-			// °¢ ½º·¹µåÀÇ ¸ŞÀÎ ÇÔ¼ö
+			// ê° ìŠ¤ë ˆë“œì˜ ë©”ì¸ í•¨ìˆ˜
 			while (true) {
 				int n;
 				n = num;
@@ -65,7 +65,7 @@ int main() {
 				}
 			}
 		}));
-		// ½º·¹µå °´Ã¼¸¦ ÀÏ´Ü °®°í ÀÖ´Â´Ù.
+		// ìŠ¤ë ˆë“œ ê°ì²´ë¥¼ ì¼ë‹¨ ê°–ê³  ìˆëŠ”ë‹¤.
 		threads.push_back(thread1);
 	}
 
@@ -74,7 +74,7 @@ int main() {
 	}
 	*/
 
-	// 3. ¸ÖÆ¼½º·¹µå + ¹ÂÅØ½º
+	// 3. ë©€í‹°ìŠ¤ë ˆë“œ + ë®¤í…ìŠ¤
 	vector<shared_ptr<thread>> threads;
 
 	for (int i = 0; i < ThreadCount; i++) {
