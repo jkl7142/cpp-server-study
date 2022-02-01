@@ -9,7 +9,7 @@ int b;
 CriticalSection b_mutex;
 
 int main() {
-	// t1 ½º·¹µå ½ÃÀÛ
+	// t1 ìŠ¤ë ˆë“œ ì‹¤í–‰
 	thread t1([]() {
 		while (1) {
 			CriticalSectionLock lock(a_mutex);
@@ -20,7 +20,7 @@ int main() {
 		}
 		});
 
-	// t2 ½º·¹µå ½ÃÀÛ
+	// t2 ìŠ¤ë ˆë“œ ì‹¤í–‰
 	thread t2([]() {
 		while (1) {
 			CriticalSectionLock lock(b_mutex);
