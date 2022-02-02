@@ -1,52 +1,55 @@
+#### ìŠ¤ë ˆë“œ ì‘ì—… (ëŒë‹¤ì‹)  
+#### thread t1( \[ \] ( ) {  
+####	ì‘ì—… ë‚´ìš©  
+#### });
+<br>
 
-// ½º·¹µå ÀÛ¾÷ (¶÷´Ù½Ä)
-thread t1([]() {
-	ÀÛ¾÷ ³»¿ë
-});
+**Critical Section**  
+#### í¬ë¦¬í‹°ì»¬ ìƒ‰ì…˜ ê°ì²´ ìƒì„±  
+#### CRITICAL_SECTION m_critSec;  
 
+#### ê°ì²´ ì´ˆê¸°í™”  
+#### InitializeCriticalSectionEx(&m_critSec, 0, 0);
 
-** Critical Section **
-// Å©¸®Æ¼ÄÃ ¼½¼Ç °´Ã¼ »ı¼º
-CRITICAL_SECTION m_critSec;
+#### ê°ì²´ ì‚­ì œ  
+#### DeleteCriticalSection(&m_critSec);
 
-// °´Ã¼ ÃÊ±âÈ­
-InitializeCriticalSectionEx(&m_critSec, 0, 0);
+#### ë½ Lock()  
+#### EnterCriticalSection(&m_critSec);
 
-// °´Ã¼ »èÁ¦
-DeleteCriticalSection(&m_critSec);
+#### ì–¸ë½ Unlock()  
+#### LeaveCriticalSection(&m_critSec);
+<br>
 
-// ¶ô Lock()
-EnterCriticalSection(&m_critSec);
+**Event**
+#### ì´ë²¤íŠ¸ ê°ì²´ ìƒì„±
+#### Event event1;
 
-// ¾ğ¶ô Unlock()
-LeaveCriticalSection(&m_critSec);
+#### ì´ë²¤íŠ¸ ìƒì„±
+#### CreateEvent();
 
-** Event **
-// ÀÌº¥Æ® °´Ã¼ »ı¼º
-Event event1;
+#### ì´ë²¤íŠ¸ ì‚­ì œ
+#### CloseHandle();
 
-// ÀÌº¥Æ® »ı¼º
-CreateEvent();
+#### ì´ë²¤íŠ¸ ëŒ€ê¸°
+#### WaitForSingleObject();
 
-// ÀÌº¥Æ® »èÁ¦
-CloseHandle();
+#### ì´ë²¤íŠ¸ ì‹ í˜¸ ì „ì†¡
+#### SetEvent();
+#### -> ëª¨ë“  ìŠ¤ë ˆë“œê°€ ê¹¨ì–´ë‚˜ê³  ìë™ìœ¼ë¡œ ìƒíƒœê°€ 0ìœ¼ë¡œ ë°”ë€œ, ìˆ˜ë™ ì´ë²¤íŠ¸ì˜ ê²½ìš°, ëª¨ë“  ìŠ¤ë ˆë“œì˜ ìƒíƒœ ê°’ì´ 1ì—ì„œ ìœ ì§€í•¨
+#### PulseEvent();
+#### -> ìˆ˜ë™ ì´ë²¤íŠ¸ë¼ê³  í•´ë„ ëª¨ë“  ìŠ¤ë ˆë“œê°€ ê¹¨ì–´ë‚¬ë‹¤ê°€ ë‹¤ì‹œ 0ìœ¼ë¡œ ìƒíƒœê°€ ë°”ë€œ
+<br>
 
-// ÀÌº¥Æ® ´ë±â
-WaitForSingleObject();
+**Semaphore**  
+#### ì„¸ë§ˆí¬ ìƒì„±
+#### CreateSemaphore();
 
-// ÀÌº¥Æ® ½ÅÈ£ Àü¼Û
-SetEvent(); // ¸ğµç ½º·¹µå°¡ ±ú¾î³ª°í ÀÚµ¿À¸·Î »óÅÂ°¡ 0À¸·Î ¹Ù²ñ, ¼öµ¿ ÀÌº¥Æ®ÀÇ °æ¿ì, ¸ğµç ½º·¹µåÀÇ ÀÌº¥Æ® »óÅÂ °ªÀÌ 1¿¡¼­ À¯ÁöÇÔ
-PulseEvent(); // ¼öµ¿ ÀÌº¥Æ®¶ó°í ÇØµµ ¸ğµç ½º·¹µå°¡ ±ú¾î³µ´Ù°¡ ´Ù½Ã 0À¸·Î »óÅÂ°¡ ¹Ù²ñ
+#### ì„¸ë§ˆí¬ ëŒ€ê¸°
+#### WaitForSingleObject();
 
-** Semaphore **
-// ¼¼¸¶Æ÷ »ı¼º
-CreateSemaphore();
+#### ì„¸ë§ˆí¬ ìì› í•´ì œ
+#### ReleaseSemaphore();
 
-// ¼¼¸¶Æ÷ ´ë±â
-WaitForSingleObject();
-
-// ¼¼¸¶Æ÷ ÀÚ¿ø ÇØÁ¦
-ReleaseSemaphore();
-
-// ¼¼¸¶Æ÷ »èÁ¦
-CloseHandle();
+#### ì„¸ë§ˆí¬ ì‚­ì œ
+#### CloseHandle();
