@@ -16,15 +16,15 @@ using namespace std;
 const int ClientNum = 10;
 
 int main() {
-	// Å×½ºÆ®¸¦ À§ÇØ ÇÁ·Î¼¼½º ¿ì¼±¼øÀ§¸¦ ³·Ãã
+	// í…ŒìŠ¤íŠ¸ë¥¼ ìœ„í•´ í”„ë¡œì„¸ìŠ¤ ìš°ì„ ìˆœìœ„ë¥¼ ë‚®ì¶¤
 	SetPriorityClass(GetCurrentProcess(), IDLE_PRIORITY_CLASS);
 
 	using namespace std::chrono_literals;
 
-	// °¢ ½º·¹µå´Â TCP ¿¬°á ÇÏ³ª¸¦ ¼öÇà
-	// °¢ TCP ¿¬°áÀº ¼­¹ö¿¡ Á¢¼Ó ÈÄ µ¥ÀÌÅÍ¸¦ Áö¼ÓÀûÀ¸·Î º¸³¿
-	// ¼­¹ö´Â ¹ŞÀº µ¥ÀÌÅÍ¸¦ ±×´ë·Î Å¬¶óÀÌ¾ğÆ®¿¡°Ô º¸³¿
-	// ¸ğµç Å¬¶óÀÌ¾ğÆ®°¡ ¼ö½ÅÇÑ ÃÑ·®À» Ãâ·Â
+	// ê° ìŠ¤ë ˆë“œëŠ” TCP ì—°ê²° í•˜ë‚˜ë¥¼ ìˆ˜í–‰
+	// ê° TCP ì—°ê²°ì€ ì„œë²„ì— ì ‘ì† í›„ ë°ì´í„°ë¥¼ ì§€ì†ì ìœ¼ë¡œ ë³´ëƒ„
+	// ì„œë²„ëŠ” ë°›ì€ ë°ì´í„°ë¥¼ ê·¸ëŒ€ë¡œ í´ë¼ì´ì–¸íŠ¸ì—ê²Œ ë³´ëƒ„
+	// ëª¨ë“  í´ë¼ì´ì–¸íŠ¸ê°€ ìˆ˜ì‹ í•œ ì´ëŸ‰ì„ ì¶œë ¥
 
 	recursive_mutex mutex;
 	vector<shared_ptr<thread>> threads;
@@ -32,7 +32,7 @@ int main() {
 	int connectedClientCount = 0;
 
 	for (int i = 0; i < ClientNum; i++) {
-		// TCP ¿¬°áÀ» ÇÏ°í ¼Û¼ö½ÅÇÏ´Â ½º·¹µå¸¦ »ı¼º. ¹«ÇÑ ·çÇÁ¸¦ µ·´Ù.
+		// TCP ì—°ê²°ì„ í•˜ê³  ì†¡ìˆ˜ì‹ í•˜ëŠ” ìŠ¤ë ˆë“œë¥¼ ìƒì„±. ë¬´í•œ ë£¨í”„ë¥¼ ëˆë‹¤.
 		shared_ptr<thread> th = make_shared<thread>(
 			[&connectedClientCount, &mutex, &totalReceivedBytes]() {
 
@@ -55,7 +55,7 @@ int main() {
 						tcpSocket.Send(dataToSend, strlen(dataToSend) + 1);
 						int receiveLength = tcpSocket.Receive();
 						if (receiveLength <= 0) {
-							// ¼ÒÄÏ ¿¬°á ¿À·ù. ·çÇÁ Á¾·á
+							// ì†Œì¼“ ì—°ê²° ì˜¤ë¥˜. ë£¨í”„ ì¢…ë£Œ
 							break;
 						}
 						lock_guard<recursive_mutex> lock(mutex);
@@ -75,7 +75,7 @@ int main() {
 		threads.push_back(th);
 	}
 
-	// ¸ŞÀÎ ½º·¹µå´Â ¸Å ÃÊ¸¶´Ù ÃÑ ¼ö½Å·®À» Ãâ·Â
+	// ë©”ì¸ ìŠ¤ë ˆë“œëŠ” ë§¤ ì´ˆë§ˆë‹¤ ì´ ìˆ˜ì‹ ëŸ‰ì„ ì¶œë ¥
 	while (true) {
 		{
 			lock_guard<recursive_mutex> lock(mutex);
