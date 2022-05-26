@@ -20,6 +20,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcp_multi_server_nonblockin
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcp_multi_server_blocking", "tcp_multi_server_blocking\tcp_multi_server_blocking.vcxproj", "{84851FC2-C915-4B0F-A58B-37744B605586}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcp_multi_server_iocp", "tcp_multi_server_iocp\tcp_multi_server_iocp.vcxproj", "{5C6E894D-390B-4A46-A206-7331706C77CC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AC6B63CB-F239-4174-A57D-F52B621D854B} = {AC6B63CB-F239-4174-A57D-F52B621D854B}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -113,6 +118,18 @@ Global
 		{84851FC2-C915-4B0F-A58B-37744B605586}.Release|x64.Build.0 = Release|x64
 		{84851FC2-C915-4B0F-A58B-37744B605586}.Release|x86.ActiveCfg = Release|Win32
 		{84851FC2-C915-4B0F-A58B-37744B605586}.Release|x86.Build.0 = Release|Win32
+		{5C6E894D-390B-4A46-A206-7331706C77CC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5C6E894D-390B-4A46-A206-7331706C77CC}.Debug|Win32.Build.0 = Debug|Win32
+		{5C6E894D-390B-4A46-A206-7331706C77CC}.Debug|x64.ActiveCfg = Debug|x64
+		{5C6E894D-390B-4A46-A206-7331706C77CC}.Debug|x64.Build.0 = Debug|x64
+		{5C6E894D-390B-4A46-A206-7331706C77CC}.Debug|x86.ActiveCfg = Debug|Win32
+		{5C6E894D-390B-4A46-A206-7331706C77CC}.Debug|x86.Build.0 = Debug|Win32
+		{5C6E894D-390B-4A46-A206-7331706C77CC}.Release|Win32.ActiveCfg = Release|Win32
+		{5C6E894D-390B-4A46-A206-7331706C77CC}.Release|Win32.Build.0 = Release|Win32
+		{5C6E894D-390B-4A46-A206-7331706C77CC}.Release|x64.ActiveCfg = Release|x64
+		{5C6E894D-390B-4A46-A206-7331706C77CC}.Release|x64.Build.0 = Release|x64
+		{5C6E894D-390B-4A46-A206-7331706C77CC}.Release|x86.ActiveCfg = Release|Win32
+		{5C6E894D-390B-4A46-A206-7331706C77CC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
